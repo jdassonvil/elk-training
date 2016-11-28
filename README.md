@@ -1,4 +1,4 @@
-# Basic training on ELK
+# First steps with ELK training
 
 TODO architecture diagram here
 
