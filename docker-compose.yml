@@ -1,0 +1,29 @@
+version: '2'
+services:
+  elastic:
+    image: elasticsearch:2.4
+    networks:
+      - elk_network
+    ports:
+     - "9200:9200"
+  kibana:
+    image: kibana:4.6
+    networks:
+      - elk_network
+    ports:
+      - "5601:5601"
+    environment:
+      - ELASTICSEARCH_URL=http://elastic:9200
+  logstash:
+    image: logstash:2.4
+    command: -f /etc/logstash/conf.d/
+    networks:
+      - elk_network
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./conf/logstash:/etc/logstash/conf.d
+
+networks:
+  elk_network:
+    driver: bridge

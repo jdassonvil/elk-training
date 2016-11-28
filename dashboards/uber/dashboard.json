@@ -1,0 +1,21 @@
+[
+  {
+    "_id": "Uber-Dashboard",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Uber Dashboard",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"id\":\"New-York-pick-up-heat-map\",\"panelIndex\":1,\"row\":1,\"size_x\":8,\"size_y\":4,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Pickup-trends\",\"panelIndex\":2,\"row\":5,\"size_x\":4,\"size_y\":4,\"type\":\"visualization\"},{\"id\":\"Total-pick-up-count\",\"type\":\"visualization\",\"panelIndex\":3,\"size_x\":4,\"size_y\":2,\"col\":9,\"row\":1},{\"id\":\"Period-load-by-week-day\",\"type\":\"visualization\",\"panelIndex\":4,\"size_x\":4,\"size_y\":4,\"col\":9,\"row\":5},{\"id\":\"Last-pick-up\",\"type\":\"visualization\",\"panelIndex\":5,\"size_x\":4,\"size_y\":2,\"col\":9,\"row\":3},{\"id\":\"Period-breakdown\",\"type\":\"visualization\",\"panelIndex\":6,\"size_x\":4,\"size_y\":4,\"col\":5,\"row\":5}]",
+      "optionsJSON": "{\"darkTheme\":true}",
+      "uiStateJSON": "{\"P-2\":{\"vis\":{\"legendOpen\":false}}}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "2016-10-31T17:19:41.091Z",
+      "timeFrom": "2016-09-29T16:19:41.091Z",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  }
+]
