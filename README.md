@@ -21,8 +21,10 @@ In the /datasets/uber directory you will find a dataset and a python script to s
 
 ```
 $ cd datasets/uber
-$ docker build -t python-streamer . && docker run -d --name python-stream python-streamer
-or without docker
+with docker
+$ docker build -t dataset-streamer -f streamer.dockerfile . 
+$ docker run --net=host --rm --name python-streamer dataset-streamer
+without docker (requires python installed)
 $ nohup python stream.py &
 ```
 
