@@ -36,7 +36,7 @@ def get_timeperiod(hour):
 def to_csv(row, dayofweek, timeperiod):
   return '"{}",{},{},"{}",{},{}\n'.format(row[0], row[1], row[2], row[3], dayofweek, timeperiod)
 
-with open('uber-raw-data-sep14.csv', 'rb') as csvfile:
+with open('uber-raw-data-sep14-small.csv', 'rb') as csvfile:
   csvfile = csv.reader(csvfile, delimiter=',')
   for row in csvfile:
     csvdate = datetime.strptime(row[0], DATE_FORMAT )
