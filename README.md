@@ -8,7 +8,7 @@ You have several options to get a working environment for this training.
 ```
 $ docker-compose up
 ```
-* Use the vagrant file, this requires vagrant and VirtualBox or VMWare installed on your machine
+* Use the vagrant file, this requires vagrant and VirtualBox installed on your machine
 ```
 $ cd vagrant
 $ vagrant up
