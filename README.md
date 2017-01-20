@@ -10,7 +10,7 @@ $ docker-compose up
 ```
 * Use the vagrant file, this requires vagrant and VirtualBox or VMWare installed on your machine
 ```
-$ cd vagrant
+$ cd env/vagrant
 $ vagrant up
 ```
 * Install logstash, elasticsearch and kibana by following the instrcution from the vendor website
