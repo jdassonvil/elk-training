@@ -1,3 +1,5 @@
-*/.vagrant/*
+**/.vagrant/*
 *.pyc
-*.DS_STORE
+.DS_Store
+*.tfstate*
+*.pem
