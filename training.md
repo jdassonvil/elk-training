@@ -69,16 +69,23 @@ If you have an eye on the Logstash logs you should see that your message has bee
 
 1. Use the `streamer.py` script to stream the entire data set through logstash 
   ```
-  $ python datasets/uber/streamer.py
+  $ python datasets/uber/streamer.py &
   ```
-1. In Kibana configure the new index logstash-uber, you should be able to see the incoming 
-1. Use the `dashboard/uber/upload.sh' script to upload the existing uber dashboard
+1. In Kibana configure the new index logstash-uber, you should be able to see the new incoming data. The dataset
+is streamed on a period of one month, so you should adjust the time window accordingly.
+1. Use the `dashboard/uber/upload.sh` script to upload the existing uber dashboard
+  ```
+  $ sh dashboard/uber/upload.sh
+  ```
 1. From the dashboard tab you should be able to display it
 1. Now that you are an accomplished ELK developer, Uber needs you ! 
 
 
-> Uber management would like to know when the users are requesting the more a ride within a day. Someone also made the
-> observation that user's behavior might might be different depending on the day of the week, especially between the
+> Uber management would like to know when the users are requesting the more a ride within a day. This information would
+> useful to adjust the size of the fleet.
+> Someone in the audience also made the
+> observation that user's behavior might be different depending on the day of the week, especially between the
 > week days and the weekend.
-> The data ingest team has already added a new "timeperiod" field that you should be able to see in Kibana.
-> You should have everything you need to build this new vizualisation and make Uber managers super happy.
+
+The data ingest team has already added a new "timeperiod" field that you should be able to see in Kibana.
+You should have everything you need to build this new vizualisation and make Uber managers super happy.
