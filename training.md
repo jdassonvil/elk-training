@@ -1,13 +1,16 @@
 ## ELK basic training
 
-### Step 1: Basic understanding of elasticsearch
+- If you don't want to spoil yourself the final solution, switch to the training branch `git checkout training`
+- If you're using a dedicated VM replace localhost by your VM IP.
 
+### Step 1: Understanding Elasticsearch
 
+For our first steps withi ELK we will work with a very common and comprehensive dataset: a movie list from IMDB.
 
-1. Using Postman or curl insert document in the movies index
+1. Using Postman or curl insert your first document in the movies index, you should have a positive response.
 
   ```
-  $ curl -X POST --data '{title: "Star Wars", director "George Lucas", country: "usa", year: "1977", duration: 140, rating: 8.2}' http://localhost:9200/movies/movie/1
+  $ curl -X POST --data '{"title": "Star Wars", "director": "George Lucas", "country": "usa", "year": "1977", "duration": 140, "rating": 8.2}' http://localhost:9200/movies/movie/1
   ```
 
 1. You can now retrieve this document from the movie index using the _search API:
@@ -22,10 +25,20 @@ can use the bulk API to insert a whole dataset to the index.
   $ curl -X POST --data-binary @datasets/imdb/movie_metadata.bulk http://localhost:9200/movies/movie/_bulk 
   ```
 
-1. Now try to make more complex request:
-  1. List all movies from a director named George
+If you've made a mistake you can easily remove documents or the entire index
 
-### Step 2: Kibana basics
+```
+curl -X DELETE http://localhost:9200/movies
+```
+
+1. Now try to make more complex request. To achieve this you will probably
+the [search API](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-search.html) and the
+[aggregation API](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html) documentation
+  1. List all movies from a director named George
+  1. List all french movies that has a rating over 8.0
+  1. Compute the average rating of 2001
+
+### Step 2: Understanding Kibana
 
 1. Connect to the Kibana web UI at `localhost:5601`
 1. The first time you get connected you will to define an index mapping. Fill in *movies* as pattern and untick the
@@ -50,16 +63,18 @@ telnet localhost 5000
 1. If you have an eye on the logs you should see that your message has been processed by Logstash
 
 
-### Step 5: Working with a real dataset
+### Step 5: Working a real use case
 
 1. Use the `streamer.py` script to stream the entire data set through logstash 
   ```
   $ python datasets/uber/streamer.py
   ```
-1. Browse the discover view
-1. Use the `dashboard/uber/upload.sh' script to upload the dashboards
-1. Browse the dashboard and check the existing views
-
-### Step 6: Adding an extra view
-
-1. Now it's time to work ! Try to add a weekly breakdown of ride pickup by time period 
+1. In Kibana configure the new index logstash-uber, you should be able to see the incoming 
+1. Use the `dashboard/uber/upload.sh' script to upload the existing uber dashboard
+1. From the dashboard tab you should be able to display it
+1. Now that you are an accomplished ELK developer, Uber needs you ! 
+Uber management would like to know when the users are requesting the more a ride within a day. Someone also made the
+observation that user's behavior might might be different depending on the day of the week, especially between the
+week days and the weekend.
+The data ingest team has already added a new "timeperiod" field that you should be able to see in Kibana.
+You should have everything you need to build this new vizualisation and make Uber managers super happy.

@@ -133,41 +133,68 @@ layout: false
 2. Elasticsearch
 3. Kibana
 4. Logstash
+
+Excerices and demo will be performed along the go !
+
 ---
 # Introduction
-- ELK is the main open source log processing tool suite.
+- ELK stands for Elasticsearch Logstash Kibana
+- ELK is the main open source log processing tool suite
+- The three component are losely coopled and be used in standalone mode
 - Widely used, you probably perform elasticsearch request everyday
 - Versioning has been aligned on 5.X for every products
 .right[![Right-aligned image](elk.png)]
+
+## What will we learn do today ?
+- Learn how to use elasticsearch and kibana
+- Understand an advanced example
+- Increase this example !
+
+## About the setup
+- Training setup is provisioned using terraform, salt and docker
+- All dataset that we will use are free datasets from [kaggle](https://kaggle.com)
+- Everythin is available on Github: https://github.com/jdassonvil/elk-training
 ---
 layout: true
 # Elasticsearch
 ---
 layout: false
-- Indexation and search engine
+## What is it ?
+- An indexation and search engine
 - Based on [Lucene](http://lucene.apache.org/core/)
-- Has REST http/json APIs
+- Document are stored in JSON
+- Query can be perfomed using a REST/http API
+- Competitors: Solar
+
+### Minimum knowledge
 - An **index** is a collection of JSON documents
 - An index can contain different **type** (i.e. structure) of documents
 - A **mapping** defines how a type of document should be indexed
-Search engine features
+
+## You said search engine ?
 - Reversed index
 - Text analyser
 
-- Competitors: Solar
+## Let's try it !
+
 ---
 layout: true
 # Kibana
 ---
 layout: false
-- Web UI to build vizualisations and dashboards
+## What is it ?
+- A Web UI to build vizualisations and dashboards
 - Based on nodeJS and AngularJS
 - Competitors: Graphana
+### Minimum knowlege
+TODO screenshot of Kibana UI here + index creation
+## Let's try it !
 ---
 layout: true
 #Logstash
 ---
 layout: false
+## What is it ?
 - Streaming log processing engine (ETL)
 - Supports many input (csv file, syslog...)
 - and ouput (elasticsearch, hdfs, kafka...)
@@ -175,8 +202,10 @@ layout: false
 - Based on JRuby
 - Competitors: FluentD
 
-
-
+## We'll not give it a try but it's super easy, believe me !
+---
+layout: true
+# Uber use case
 
 
     </textarea>

@@ -18,4 +18,4 @@ $ vagrant up
 ## Training
 
 To follow the proper training switch to the training branch of this repository and follow the instruction from 
-`training.md`.
+[training.md](https://github.com/jdassonvil/elk-training/blob/master/training.md).
