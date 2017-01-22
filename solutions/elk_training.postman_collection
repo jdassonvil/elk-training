@@ -1,0 +1,67 @@
+{
+	"variables": [],
+	"info": {
+		"name": "ELK training",
+		"_postman_id": "cf289e5a-10cc-02f7-5e72-ee3add9e43bc",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Insert 1 movie",
+			"request": {
+				"url": "http://localhost:9200/movies/movie/1",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"title\": \"Star Wars\", \n \"director\": \"George Lucas\", \n \"country\": \"usa\", \n \"year\": \"1977\", \n \"duration\": 140, \n \"rating\": 8.2\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get all movies",
+			"request": {
+				"url": "http://localhost:9200/movies/_search",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Search for George",
+			"request": {
+				"url": "http://localhost:9200/movies/_search?q=director:George",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Search all good french movies",
+			"request": {
+				"url": "http://localhost:9200/movies/_search",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"query\": {\n\t\t\"filtered\":{\n\t\t\t\"query\":{\n\t\t\t\t\"term\": { \"country\": \"france\"}\n\t\t\t},\n\t\t\t\"filter\": {\n\t\t\t\t\"range\":{\n\t\t\t\t\t\"rating\":{\n\t\t\t\t\t\t\"from\": 8\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
