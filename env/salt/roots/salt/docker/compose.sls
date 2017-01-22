@@ -8,4 +8,4 @@ compose_install:
     - name: /usr/local/bin/docker-compose
     - source: https://github.com/docker/compose/releases/download/{{ compose_version }}/docker-compose-{{ os }}-{{ arch }}
     - source_hash: {{ compose_hash }}
-    - chmod: 755
+    - mode: 755

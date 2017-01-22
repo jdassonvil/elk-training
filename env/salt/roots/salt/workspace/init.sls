@@ -14,7 +14,8 @@ workspace_install-git:
 
 workspace_clone-repo:
   cmd.run:
-    - name: git clone {{ git_repo_url }} {{ workspace_dir }}
+    - name: git clone {{ git_repo_url }}
+    - cwd: {{ workspace_dir }}
     - runas: elk
 
 workspace_run-cluster:
