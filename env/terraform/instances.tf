@@ -1,6 +1,6 @@
 variable "instance-count" {
   type    = "string"
-  default = "1"
+  default = "12"
 }
 
 resource "openstack_compute_floatingip_v2" "elk-fip" {
@@ -25,16 +25,6 @@ resource "openstack_compute_instance_v2" "elk-instance" {
 
   provisioner "file" {
     source = "../salt"
-    destination = "/home/cloud-user"
-  }
-
-  provisioner "file" {
-    source = "../../docker-compose.yml"
-    destination = "/home/cloud-user/docker-compose.yml"
-  }
-
-  provisioner "file" {
-    source = "../../conf/logstash"
     destination = "/home/cloud-user"
   }
 
