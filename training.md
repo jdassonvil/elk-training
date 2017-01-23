@@ -30,8 +30,9 @@ If you've made a mistake you can easily remove documents or the entire index
 curl -X DELETE http://localhost:9200/movies
 ```
 
-1. Now with the help of  [search API](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-search.html) and the
-[aggregation API](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html) documentation
+1. Now with the help of  [search API](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-search.html),
+[aggregation API](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html) and
+the [Lucene syntax reference](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html)
 you can try to make more complex request. For example:
 
   1. List all movies from a director named George
