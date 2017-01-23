@@ -1,7 +1,6 @@
 ## ELK basic training
 
-- If you don't want to spoil yourself the final solution, switch to the training branch `git checkout training`
-- If you're using a dedicated VM replace localhost by your VM IP.
+**If you're using a dedicated VM replace localhost by your VM IP.**
 
 ### Step 1: Understanding Elasticsearch
 
