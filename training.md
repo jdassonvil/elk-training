@@ -69,13 +69,15 @@ If you have an eye on the Logstash logs you should see that your message has bee
 
 1. Use the `streamer.py` script to stream the entire data set through logstash 
   ```
-  $ python datasets/uber/streamer.py &
+  $ cd datasets/uber
+  $ python streamer.py &
   ```
 1. In Kibana configure the new index logstash-uber, you should be able to see the new incoming data. The dataset
 is streamed on a period of one month, so you should adjust the time window accordingly.
-1. Use the `dashboard/uber/upload.sh` script to upload the existing uber dashboard
+1. Use the `upload.sh` script to upload the existing uber dashboard
   ```
-  $ sh dashboard/uber/upload.sh
+  $ cd dashboards/uber/script
+  $ python upload.py
   ```
 1. From the dashboard tab you should be able to display it
 1. Now that you are an accomplished ELK developer, Uber needs you ! 
