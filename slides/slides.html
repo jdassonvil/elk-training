@@ -137,14 +137,16 @@ layout: false
 Excerices and demo will be performed along the go !
 
 ---
-# Introduction
+# Introduction 
+
+## What is ELK ?
 - ELK stands for Elasticsearch Logstash Kibana
 - ELK is the main open source log processing tool suite
-- The three component are losely coopled and be used in standalone mode
+- The three component are losely coopled and can be used separatel
 - Widely used, you probably perform elasticsearch request everyday
 - Versioning has been aligned on 5.X for every products
 .right[![Right-aligned image](elk.png)]
-
+---
 ## What will we learn do today ?
 - Learn how to use elasticsearch and kibana
 - Understand an advanced example
@@ -152,10 +154,14 @@ Excerices and demo will be performed along the go !
 
 ## About the setup
 - Training setup is provisioned using terraform, salt and docker
+- We will use Kibana 4.X, Elasticsearch 2.X and Logstash 2.X
 - All dataset that we will use are free datasets from [kaggle](https://kaggle.com)
-- Everythin is available on Github: https://github.com/jdassonvil/elk-training
+- Everything is available on [Github](https://github.com/jdassonvil/elk-training)
 ---
+name: inverse
 layout: true
+class: center, middle, inverse
+---
 # Elasticsearch
 ---
 layout: false
@@ -164,33 +170,43 @@ layout: false
 - Based on [Lucene](http://lucene.apache.org/core/)
 - Document are stored in JSON
 - Query can be perfomed using a REST/http API
-- Competitors: Solar
+- Competitors: Solar, Sphynx
 
-### Minimum knowledge
+## Minimum knowledge
 - An **index** is a collection of JSON documents
 - An index can contain different **type** (i.e. structure) of documents
 - A **mapping** defines how a type of document should be indexed
 
 ## You said search engine ?
-- Reversed index
+- Inverted index
 - Text analyser
 
 ## Let's try it !
 
 ---
+name: inverse
 layout: true
+class: center, middle, inverse
+---
 # Kibana
 ---
 layout: false
 ## What is it ?
 - A Web UI to build vizualisations and dashboards
 - Based on nodeJS and AngularJS
-- Competitors: Graphana
-### Minimum knowlege
-TODO screenshot of Kibana UI here + index creation
+- Competitors: Graphana, Graphite, Graylog
+---
+## A simple UI
+.right[![Right-aligned image](kibana1.png)]
+---
+## Index configuration
+.right[![Right-aligned image](kibana2.png)]
 ## Let's try it !
 ---
+name: inverse
 layout: true
+class: center, middle, inverse
+---
 #Logstash
 ---
 layout: false
@@ -200,11 +216,14 @@ layout: false
 - and ouput (elasticsearch, hdfs, kafka...)
 - one log entry = one document
 - Based on JRuby
-- Competitors: FluentD
+- Competitors: FluentD, Graylog
 
 ## We'll not give it a try but it's super easy, believe me !
 ---
+name: inverse
 layout: true
+class: center, middle, inverse
+---
 # Uber use case
 
 
