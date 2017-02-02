@@ -4,15 +4,16 @@ import csv
 import json
 
 class Movie:
-    def __init__(self, title, director, duration, country, rating):
+    def __init__(self, title, director, duration, country, rating, year):
         self.title = title
         self.director = director
         self.duration = None if not duration else int(duration)
         self.country = country
         self.rating = None if not rating else float(rating)
+        self.year = None if not year else int(year)
 
     def toString(self):
-        return self.title + '|' + self.director + '|' + self.country + '|' + self.rating
+        return self.title + '|' + self.director + '|' + self.country + '|' + self.rating + '|' + self.year
 
     def toJSON(self):
         return json.dumps(self.__dict__, sort_keys=False)
@@ -24,7 +25,7 @@ with open('movie_metadata.csv', 'rb') as csvfile:
   bulkFile = open('movie_metadata.bulk', 'w')
 
   for row in csvfile:
-      movie = Movie(row[11], row[1], row[3], row[20], row[25])
+      movie = Movie(row[11], row[1], row[3], row[20], row[25], row[23])
       movies.append(movie.__dict__)
       bulkFile.write('{"create" : { "_index" : "movies", "_type" : "movie"}}\n')
       bulkFile.write(movie.toJSON() + '\n')

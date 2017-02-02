@@ -91,3 +91,8 @@ is streamed on a period of one month, so you should adjust the time window accor
 
 The data ingest team has already added a new "timeperiod" field that you should be able to see in Kibana.
 You should have everything you need to build this new vizualisation and make Uber managers super happy.
+
+## Solutions
+
+The solutions of this training are located in the /solutions directory. You can easily import the final Kibana
+dashboard through `settings > object > import`.
