@@ -3,4 +3,3 @@
 .DS_Store
 *.tfstate*
 *.pem
-env/terraform/openstack.tf

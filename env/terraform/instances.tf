@@ -1,8 +1,3 @@
-variable "instance-count" {
-  type    = "string"
-  default = "12"
-}
-
 resource "openstack_compute_floatingip_v2" "elk-fip" {
   count = "${var.instance-count}"
   pool = "public-floating-601"

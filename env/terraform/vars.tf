@@ -17,3 +17,8 @@ variable "password" {
   type = "string"
   description = "password credential for openstack api"
 }
+
+variable "instance-count" {
+  type    = "string"
+  description = "how many instance you want to create"
+}
